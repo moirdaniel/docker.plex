@@ -1,0 +1,15 @@
+version: '3'
+services:
+  plex:
+    image: plexinc/pms-docker
+    container_name: plex
+    network_mode: host
+    environment:
+      - PLEX_CLAIM=claim-xsEBzmaFyYNJ9RvLoK_u
+    volumes:
+      - /path/to/plex/config:/config
+      - /path/to/data:/data
+      - /mnt/pointmount/opendrive:/data/OpenDrive
+      - /mnt/pointmount/Moir.tv:/data/Moir.tv
+      - /mnt/pointmount/GMail:/data/GMail
+    restart: unless-stopped
